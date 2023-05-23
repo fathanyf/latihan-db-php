@@ -8,32 +8,17 @@ $result=mysqli_query($mysqli,"SELECT* from record ORDER by id DESC");
         <title></title>
     </head>
     <body>
+        <h1>Database Anggota Paramotor</h1>
+        <h2>Pengisian Data</h2>
         <form action="function.php" method="POST">
-            Name<input type="text" name="name"><br>
-            Email <input type="email" name="email"><br>
-            Mobile <input type="mobile" name="mobile"><br>
-            Date <input type="date" name="date"><br>
+            Name <br>  <input type="text" name="name"><br>
+            Email <br> <input type="email" name="email"><br>
+            Mobile <br> <input type="mobile" name="mobile"><br>
+            Date  <br> <input type="date" name="date"><br>
             <input type="submit" name="submit">
         </form>
-        <table border="1">
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
-            </tr>
+        <a href="display.php"><h3>lihat data</h3></a>
 
-        <?php
-        while($res=mysqli_fetch_array($result)){
-
-            echo '<tr>';
-            echo '<td>'.$res['name'].'</td>';
-            echo '<td>'.$res['email'].'</td>';
-            echo '<td>'.$res['mobile'].'</td>';
-            echo '</tr>';
-
-        }
-        ?>
-        </table>
         
     </body>
 </html>
