@@ -1,14 +1,19 @@
-<?php
+<html>
+    <head>
+        <title>Database Anggota Paramotor DKI Jakarta</title>
+        <link rel="stylesheet" href="display.css">
+    </head>
+    <body>
+    <?php
 include("config.php");
-$result=mysqli_query($mysqli,"SELECT* from record ORDER by id DESC");
+$result=mysqli_query($mysqli,"SELECT* from member2 ORDER by id DESC");
 ?>
 
 <a href="insert.php">kembali</a>
 <table border="1">
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
+                <th>Nama</th>
+                <th>Domisili</th>
             </tr>
 
         <?php
@@ -16,11 +21,12 @@ $result=mysqli_query($mysqli,"SELECT* from record ORDER by id DESC");
 
             echo '<tr>';
             echo '<td>'.$res['name'].'</td>';
-            echo '<td>'.$res['email'].'</td>';
-            echo '<td>'.$res['mobile'].'</td>';
+            echo '<td>'.$res['address'].'</td>';
             echo '</tr>';
 
         }
         ?>
         </table>
 <a href="insert.php">kembali</a>
+    </body>
+</html>
